@@ -1,5 +1,12 @@
 #!/bin/bash
 HaveDir=false
+
+if [ "${type -t $1}"="alias" ]
+then
+    echo "Name not Vaild, enter a vaild name"
+    exit 0
+fi
+
 if [ -z $2]
 then
     mkdir ~/devenv
@@ -25,11 +32,11 @@ if [ HaveDir ]
 then 
     echo "" >> ~/.bashrc
     echo "# My Dev Command" >> ~/.bashrc
-    echo 'devCommand() { CWD="$PWD"; cd $2/CLI && ./command.sh "$CWD" "$@"; cd $CWD; }' >> ~/.bashrc
+    echo 'export devCommand() { CWD="$PWD"; cd $2/CLI && ./command.sh "$CWD" "$@"; cd $CWD; }' >> ~/.bashrc
 else
     echo "" >> ~/.bashrc
     echo "# My Dev Command" >> ~/.bashrc
-    echo 'devCommand() { CWD="$PWD"; cd $Dir/CLI && ./command.sh "$CWD" "$@"; cd $CWD; }' >> ~/.bashrc
+    echo 'export devCommand() { CWD="$PWD"; cd $Dir/CLI && ./command.sh "$CWD" "$@"; cd $CWD; }' >> ~/.bashrc
 fi
 
 if [ -z $1 ]

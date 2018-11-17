@@ -9,6 +9,7 @@ call the alias once installed for more info.
 - Whalla! Package Installed
 
 # Adding Commands
+- add command name to static-commands.txt
 - create a folder with the command name, it has to be all lower case and spaces are replaced with underscores
 - add an executable run.sh file and a help.txt file
 - copy the files needed to run the command in the created folder
