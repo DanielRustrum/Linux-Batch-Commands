@@ -2,7 +2,12 @@
 HaveDir=false
 if [ -z $2]
 then
+    mkdir ~/devenv
     Dir=~/devenv
+    cd $Dir
+    git clone https://github.com/DanielRustrum/Linux-Batch-Commands
+    cp -R Linux-Batch-Commands/* *
+    rm -r Linux-Batch-Commands
 else
     HaveDir=true
 fi
@@ -33,3 +38,7 @@ then
 else
     echo "alias $1='devCommand" >> ~/.bashrc
 fi
+
+
+echo "Everything is ready!"
+cd ~
