@@ -1,0 +1,14 @@
+This is the main help file. 
+
+
+[WARNING]:This Command doesn't work with directories with spaces.
+
+
+These are the commands availible to you. use the -h or --help flag before their name to learn more about them.
+You can also use other flags before the command to use those as well.
+
+Flags:
+    -h or --help) Displays help information that you are seeing here or displays the help info for the command.
+    -s or --sudo) Runs sudo before the command specified.
+
+Commands Installed:
